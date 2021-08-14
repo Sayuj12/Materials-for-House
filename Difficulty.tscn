@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Dodgy Ultra.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Easy.gd" type="Script" id=2]
+[ext_resource path="res://ES_Secrets of the Earth - Lama House.mp3" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.156
+anchor_bottom = 1.312
+margin_right = 0.31604
+margin_bottom = -0.0880127
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+color = Color( 0.301961, 0.521569, 0.564706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = -30.0
+margin_top = 110.0
+margin_right = 992.0
+margin_bottom = 207.0
+custom_fonts/font = SubResource( 1 )
+text = "Difficulty
+"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 396.0
+margin_top = 236.0
+margin_right = 531.0
+margin_bottom = 275.0
+text = "Easy"
+script = ExtResource( 2 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 394.378
+margin_top = 301.893
+margin_right = 529.378
+margin_bottom = 340.893
+text = "Medium"
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 393.568
+margin_top = 363.731
+margin_right = 528.568
+margin_bottom = 402.731
+text = "Hard"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
